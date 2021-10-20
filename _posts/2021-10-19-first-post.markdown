@@ -21,7 +21,7 @@ Simples? Well, not quite. Collecting the data is simple-ish but for us Data Lake
 
 Conceptually the raw data is immutable, a powerful idea that I haven't quite got to grips with. Then the data lake itself needs to be layered: - raw, curated and presentation. There is also the matter of file format in the curated layer:- avro, parquet? Then there is security, archiving etc.
 
-None of these problems are insurmountable and one of our architects is currently beavering away to come up with an approach. I think we'll be able to turn something around fairly quickly. We might even avoid the dreaded data lake.
+None of these problems are insurmountable and one of our architects is currently beavering away to come up with an approach. I think we'll be able to turn something around fairly quickly. We might even avoid the dreaded data swamp.
 
 > Data From The Dark Lagoon - 'Aaarrrrgh XML blueh!'
 
