@@ -5,11 +5,11 @@ date: 2021-10-26 14:00:00 +0100
 author: Pat Gawley
 ---
 
-I have had a fun morning trouble shooting an issue and thought one the resolution (at least part of it) would be worth writing up.
+I have had a fun morning trouble shooting an issue and thought that the resolution (at least part of it) would be worth writing up.
 
 ## Background
 
-We use the Cosmos [Change Feed feature](https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed) to batch up documents, I won't debate the wisdom of this decision here but it's what we've done. The change feed kind of works like a trigger from the RDBMS world and it felt like a handy way of batching documents up as you could specifiy how many documents you could pick up from the change feed in one go. So as the documents are inserted we have a web job hosted in an Azure web app which uses the change feed processor[^1] to consume the documents in batches, do a little processing then persist them in blob storage. We had a production issue; again I won't go into details but the upshot was that we needed to 'replay' the change feed to send documents through again i.e. fire the change feed again.
+We use the Cosmos [Change Feed feature](https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed) to batch up documents, I won't debate the wisdom of this decision here but it's what we've done. The change feed kind of works like a trigger from the RDBMS world and it felt like a handy way of batching documents up as you can specifiy how many documents you could pick up from the change feed in one go. So as the documents are inserted we have a web job hosted in an Azure web app which uses the change feed processor[^1] to consume the documents in batches, do a little processing then persist them in blob storage. We had a production issue; again I won't go into details but the upshot was that we needed to 'replay' the change feed to send documents through again i.e. fire the change feed again.
 
 ## Initialliay Considered Option
 
